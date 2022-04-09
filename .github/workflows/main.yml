@@ -31,5 +31,6 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          cd llvm-project
+#          apt update && apt install -y  gcc g++ cmake ninja-build git python3 zlib1g-dev
+          cd $GITHUB_WORKSPACE/llvm-project
           cat README.md

@@ -33,7 +33,7 @@ jobs:
           sudo apt update && sudo apt install -y  gcc g++ cmake ninja-build git python3 zlib1g-dev
           mkdir build
           cd build
-          cmake -G Ninja -DLLVM_ENABLE_PROJECTS='clang;clang-tools-extra' -DLLVM_ENABLE_RUNTIMES='libcxx;libcxxabi' -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/opt/myclang -DLLVM_TARGETS_TO_BUILD='Native' ../llvm
+          cmake -G Ninja -DLLVM_ENABLE_PROJECTS='clang;clang-tools-extra' -DLLVM_ENABLE_RUNTIMES='libcxx;libcxxabi' -DLIBCXXABI_USE_LLVM_UNWINDER=OFF -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/opt/myclang -DLLVM_TARGETS_TO_BUILD='Native' ../llvm
           ninja install
 
 
